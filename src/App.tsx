@@ -1,4 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; 
+import React from 'react';
+import ContactSection from './components/ContactSection'; // تأكد من مسار الملف
+
+function App() {
+  return (
+    <div className="App">
+      {/* باقي مكونات موقعك مثل Header و Hero Section */}
+      
+      {/* استدعاء قسم الاتصال هنا */}
+      <ContactSection /> 
+      
+      {/* Footer */}
+    </div>
+  );
+}
+
+export default App;
 import { AnimatePresence } from "framer-motion";
 import { LanguageProvider } from "./context/LanguageContext";
 import Loader from "./components/Loader";
