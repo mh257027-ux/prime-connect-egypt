@@ -15,7 +15,6 @@ import Expansion from "./components/Expansion";
 import Testimonials from "./components/Testimonials";
 import Partners from "./components/Partners";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 function Site() {
@@ -49,7 +48,6 @@ function Site() {
 
       <Footer />
       <FloatingWhatsApp />
-    </div>
   );
 }
 
