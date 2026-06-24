@@ -166,9 +166,13 @@ const en = {
       hours: "Working hours",
     },
     values: {
+<<<<<<< HEAD
       email: "mo@primeegypt",
       email2: "hesham@primeegypt",
       email3: "khalifa@primeegypt",
+=======
+      emails: ["mo@primeegypt", "hesham@primeegypt", "khalifa@primeegypt"],
+>>>>>>> abdf80f6347f44d1bcd13098b37c180f40bc7fef
       phone: "+20 10 00982441",
       whatsapp: "+20 10 00982441",
       address: "New Administrative Capital, Cairo, Egypt",
@@ -343,9 +347,13 @@ const ar: Translation = {
       hours: "ساعات العمل",
     },
     values: {
+<<<<<<< HEAD
       email: "mo@primeegypt",
       email2: "hesham@primeegypt",
       email3: "khalifa@primeegypt",
+=======
+      emails: ["mo@primeegypt", "hesham@primeegypt", "khalifa@primeegypt"],
+>>>>>>> abdf80f6347f44d1bcd13098b37c180f40bc7fef
       phone: "+20 10 00982441",
       whatsapp: "+20 10 00982441",
       address: "العاصمة الإدارية الجديدة، القاهرة، مصر",
@@ -518,9 +526,13 @@ const zh: Translation = {
       hours: "工作时间",
     },
     values: {
+<<<<<<< HEAD
       email: "mo@primeegypt",
       email2: "hesham@primeegypt",
       email3: "khalifa@primeegypt",
+=======
+      emails: ["mo@primeegypt", "hesham@primeegypt", "khalifa@primeegypt"],
+>>>>>>> abdf80f6347f44d1bcd13098b37c180f40bc7fef
       phone: "+20 10 00982441",
       whatsapp: "+20 10 00982441",
       address: "埃及开罗，新行政首都",

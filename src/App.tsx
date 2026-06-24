@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; 
+import React from 'react';
 import { AnimatePresence } from "framer-motion";
 import { LanguageProvider } from "./context/LanguageContext";
 import Loader from "./components/Loader";
@@ -14,7 +15,6 @@ import Expansion from "./components/Expansion";
 import Testimonials from "./components/Testimonials";
 import Partners from "./components/Partners";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 function Site() {
@@ -48,7 +48,6 @@ function Site() {
 
       <Footer />
       <FloatingWhatsApp />
-    </div>
   );
 }
 

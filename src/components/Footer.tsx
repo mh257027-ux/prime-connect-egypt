@@ -7,7 +7,11 @@ const SOCIALS = [
   { icon: Globe, href: "#" },
   { icon: MessageCircle, href: "#" },
   { icon: Send, href: "#" },
+<<<<<<< HEAD
   { icon: Mail, href: "mailto:mo@primeegypt" }, // ربطنا أيقونة الإيميل بأول إيميل
+=======
+  { icon: Mail, href: "mailto:mo@primeegypt" }, // تم ربط أيقونة الإيميل بأول إيميل
+>>>>>>> abdf80f6347f44d1bcd13098b37c180f40bc7fef
 ];
 
 export default function Footer() {
@@ -96,16 +100,31 @@ export default function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-cream/60">
               {/* الإيميلات الجديدة */}
               <li>
+<<<<<<< HEAD
                 <a href="mailto:mo@primeegypt" className="transition-colors hover:text-gold-light">
+=======
+                <a
+                  href="mailto:mo@primeegypt"
+                  className="transition-colors hover:text-gold-light"
+                >
+>>>>>>> abdf80f6347f44d1bcd13098b37c180f40bc7fef
                   mo@primeegypt
                 </a>
               </li>
               <li>
+<<<<<<< HEAD
                 <a href="mailto:hesham@primeegypt" className="transition-colors hover:text-gold-light">
+=======
+                <a
+                  href="mailto:hesham@primeegypt"
+                  className="transition-colors hover:text-gold-light"
+                >
+>>>>>>> abdf80f6347f44d1bcd13098b37c180f40bc7fef
                   hesham@primeegypt
                 </a>
               </li>
               <li>
+<<<<<<< HEAD
                 <a href="mailto:khalifa@primeegypt" className="transition-colors hover:text-gold-light">
                   khalifa@primeegypt
                 </a>
@@ -119,6 +138,27 @@ export default function Footer() {
               </li>
 
               {/* العنوان (بيتنقل من ملف الترجمة) */}
+=======
+                <a
+                  href="mailto:khalifa@primeegypt"
+                  className="transition-colors hover:text-gold-light"
+                >
+                  khalifa@primeegypt
+                </a>
+              </li>
+              
+              {/* الرقم الجديد */}
+              <li>
+                <a
+                  href="tel:+201000982441"
+                  className="transition-colors hover:text-gold-light"
+                >
+                  +20 10 00982441
+                </a>
+              </li>
+              
+              {/* العنوان (تم تركه يسحب من ملف الترجمة) */}
+>>>>>>> abdf80f6347f44d1bcd13098b37c180f40bc7fef
               <li className="leading-relaxed">{t.contact.values.address}</li>
             </ul>
             <div className="mt-5">
