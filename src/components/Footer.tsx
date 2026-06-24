@@ -7,7 +7,7 @@ const SOCIALS = [
   { icon: Globe, href: "#" },
   { icon: MessageCircle, href: "#" },
   { icon: Send, href: "#" },
-  { icon: Mail, href: "#" },
+  { icon: Mail, href: "mailto:mo@primeegypt" }, // تم ربط أيقونة الإيميل بأول إيميل
 ];
 
 export default function Footer() {
@@ -94,22 +94,43 @@ export default function Footer() {
               {t.footer.contactCol}
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-cream/60">
+              {/* الإيميلات الجديدة */}
               <li>
                 <a
-                  href={`mailto:${t.contact.values.email}`}
+                  href="mailto:mo@primeegypt"
                   className="transition-colors hover:text-gold-light"
                 >
-                  {t.contact.values.email}
+                  mo@primeegypt
                 </a>
               </li>
               <li>
                 <a
-                  href={`tel:${t.contact.values.phone.replace(/\s/g, "")}`}
+                  href="mailto:hesham@primeegypt"
                   className="transition-colors hover:text-gold-light"
                 >
-                  {t.contact.values.phone}
+                  hesham@primeegypt
                 </a>
               </li>
+              <li>
+                <a
+                  href="mailto:khalifa@primeegypt"
+                  className="transition-colors hover:text-gold-light"
+                >
+                  khalifa@primeegypt
+                </a>
+              </li>
+              
+              {/* الرقم الجديد */}
+              <li>
+                <a
+                  href="tel:+201000982441"
+                  className="transition-colors hover:text-gold-light"
+                >
+                  +20 10 00982441
+                </a>
+              </li>
+              
+              {/* العنوان (تم تركه يسحب من ملف الترجمة) */}
               <li className="leading-relaxed">{t.contact.values.address}</li>
             </ul>
             <div className="mt-5">
