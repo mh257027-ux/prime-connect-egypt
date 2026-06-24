@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"; 
-import React from 'react';
 import { AnimatePresence } from "framer-motion";
 import { LanguageProvider } from "./context/LanguageContext";
 import Loader from "./components/Loader";
@@ -16,6 +15,7 @@ import Testimonials from "./components/Testimonials";
 import Partners from "./components/Partners";
 import Contact from "./components/Contact";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import Footer from "./components/Footer";
 
 function Site() {
   const [loading, setLoading] = useState(true);
@@ -48,6 +48,7 @@ function Site() {
 
       <Footer />
       <FloatingWhatsApp />
+    </div>
   );
 }
 
