@@ -166,13 +166,9 @@ const en = {
       hours: "Working hours",
     },
     values: {
-<<<<<<< HEAD
       email: "mo@primeegypt",
       email2: "hesham@primeegypt",
       email3: "khalifa@primeegypt",
-=======
-      emails: ["mo@primeegypt", "hesham@primeegypt", "khalifa@primeegypt"],
->>>>>>> abdf80f6347f44d1bcd13098b37c180f40bc7fef
       phone: "+20 10 00982441",
       whatsapp: "+20 10 00982441",
       address: "New Administrative Capital, Cairo, Egypt",
@@ -347,13 +343,9 @@ const ar: Translation = {
       hours: "ساعات العمل",
     },
     values: {
-<<<<<<< HEAD
       email: "mo@primeegypt",
       email2: "hesham@primeegypt",
       email3: "khalifa@primeegypt",
-=======
-      emails: ["mo@primeegypt", "hesham@primeegypt", "khalifa@primeegypt"],
->>>>>>> abdf80f6347f44d1bcd13098b37c180f40bc7fef
       phone: "+20 10 00982441",
       whatsapp: "+20 10 00982441",
       address: "العاصمة الإدارية الجديدة، القاهرة، مصر",
@@ -526,13 +518,9 @@ const zh: Translation = {
       hours: "工作时间",
     },
     values: {
-
       email: "mo@primeegypt",
       email2: "hesham@primeegypt",
       email3: "khalifa@primeegypt",
-=======
-      emails: ["mo@primeegypt", "hesham@primeegypt", "khalifa@primeegypt"],
->>>>>>> abdf80f6347f44d1bcd13098b37c180f40bc7fef
       phone: "+20 10 00982441",
       whatsapp: "+20 10 00982441",
       address: "埃及开罗，新行政首都",
@@ -556,3 +544,50 @@ const zh: Translation = {
 
 export const translations: Record<Lang, Translation> = { en, ar, zh };
 export type { Translation };
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
+import { translations, type Lang, type Translation } from "../i18n/translations";
+
+interface LanguageContextValue {
+  lang: Lang;
+  setLang: (lang: Lang) => void;
+  dir: "ltr" | "rtl";
+  t: Translation;
+}
+
+const LanguageContext = createContext<LanguageContextValue | null>(null);
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [lang, setLang] = useState<Lang>("en");
+  const dir: "ltr" | "rtl" = lang === "ar" ? "rtl" : "ltr";
+
+  useEffect(() => {
+    const el = document.documentElement;
+    el.lang = lang;
+    el.dir = dir;
+  }, [lang, dir]);
+
+  const value: LanguageContextValue = {
+    lang,
+    setLang,
+    dir,
+    t: translations[lang],
+  };
+
+  return (
+    <LanguageContext.Provider value={value}>
+      {children}
+    </LanguageContext.Provider>
+  );
+}
+
+export function useLanguage() {
+  const ctx = useContext(LanguageContext);
+  if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");
+  return ctx;
+}
