@@ -9,7 +9,7 @@ import { translations, type Lang, type Translation } from "../i18n/translations"
 
 interface LanguageContextValue {
   lang: Lang;
-  setLang: (l: Lang) => void;
+  setLang: (lang: Lang) => void;
   dir: "ltr" | "rtl";
   t: Translation;
 }
@@ -34,11 +34,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
+    <LanguageContext.Provider value={value}>
+      {children}
+    </LanguageContext.Provider>
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function useLanguage() {
   const ctx = useContext(LanguageContext);
   if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");

@@ -32,11 +32,28 @@ export default function Contact() {
     "Hello Prime Connect Egypt, I would like to discuss investment opportunities in Egypt."
   )}`;
 
+  // الإيميلات التلاتة
+  const emails = [
+    { label: "Mo - Business Development", value: v.email },
+    { label: "Hesham - Management", value: v.email2 },
+    { label: "Khalifa - Operations", value: v.email3 },
+  ];
+
   const info = [
-    { icon: Mail, label: t.contact.info.email, value: v.email, href: `mailto:${v.email}` },
+    // الإيميلات التلاتة
+    ...emails.map((em) => ({
+      icon: Mail,
+      label: em.label,
+      value: em.value,
+      href: `mailto:${em.value}`,
+    })),
+    // الرقم
     { icon: Phone, label: t.contact.info.phone, value: v.phone, href: `tel:${v.phone.replace(/\s/g, "")}` },
+    // الواتساب
     { icon: MessageCircle, label: t.contact.info.whatsapp, value: v.whatsapp, href: waLink },
+    // العنوان
     { icon: MapPin, label: t.contact.info.address, value: v.address },
+    // ساعات العمل
     { icon: Clock, label: t.contact.info.hours, value: v.hours },
   ];
 
