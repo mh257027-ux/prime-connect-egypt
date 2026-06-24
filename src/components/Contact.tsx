@@ -16,22 +16,22 @@ const Contact: React.FC = () => {
 
             <div className="info-item">
               <span className="info-label">Mo - Business Development</span>
-              <a href="mailto:mo@primeconnectegypt.com" className="info-value">
-                mo@primeconnectegypt.com
+              <a href="mailto:mo@primeegypt" className="info-value">
+                mo@primeegypt
               </a>
             </div>
 
             <div className="info-item">
-              <span className="info-label">Khaifa - Operations</span>
-              <a href="mailto:khaifa@primeconnectegypt.com" className="info-value">
-                khaifa@primeconnectegypt.com
+              <span className="info-label">Khalifa - Operations</span>
+              <a href="mailto:khalifa@primeegypt" className="info-value">
+                khalifa@primeegypt
               </a>
             </div>
 
             <div className="info-item">
               <span className="info-label">Hesham - Management</span>
-              <a href="mailto:hesham@primeconnectegypt.com" className="info-value">
-                hesham@primeconnectegypt.com
+              <a href="mailto:hesham@primeegypt" className="info-value">
+                hesham@primeegypt
               </a>
             </div>
           </div>
@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
             <div className="info-item">
               <span className="info-label">Phone</span>
               <a href="tel:+201000982441" className="info-value">
-                +20 100 098 2441
+                +20 10 00982441
               </a>
             </div>
 
@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
                 rel="noopener noreferrer"
                 className="info-value"
               >
-                +20 100 098 2441
+                +20 10 00982441
               </a>
             </div>
 
