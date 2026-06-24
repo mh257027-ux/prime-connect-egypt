@@ -526,7 +526,7 @@ const zh: Translation = {
       hours: "工作时间",
     },
     values: {
-<<<<<<< HEAD
+
       email: "mo@primeegypt",
       email2: "hesham@primeegypt",
       email3: "khalifa@primeegypt",

@@ -7,7 +7,7 @@ const SOCIALS = [
   { icon: Globe, href: "#" },
   { icon: MessageCircle, href: "#" },
   { icon: Send, href: "#" },
-<<<<<<< HEAD
+
   { icon: Mail, href: "mailto:mo@primeegypt" }, // ربطنا أيقونة الإيميل بأول إيميل
 =======
   { icon: Mail, href: "mailto:mo@primeegypt" }, // تم ربط أيقونة الإيميل بأول إيميل
