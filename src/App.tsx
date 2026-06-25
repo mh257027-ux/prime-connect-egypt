@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"; 
+import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { LanguageProvider } from "./context/LanguageContext";
 import Loader from "./components/Loader";

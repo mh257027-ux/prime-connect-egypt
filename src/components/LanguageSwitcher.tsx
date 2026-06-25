@@ -1,50 +1,53 @@
-import { motion } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
-import type { Lang } from "../i18n/translations";
 
-const OPTIONS: { code: Lang; label: string }[] = [
-  { code: "en", label: "EN" },
-  { code: "ar", label: "AR" },
-  { code: "zh", label: "中文" },
-];
-
-export default function LanguageSwitcher({
-  variant = "desktop",
-}: {
+interface LanguageSwitcherProps {
   variant?: "desktop" | "mobile";
-}) {
+}
+
+export default function LanguageSwitcher({ variant = "desktop" }: LanguageSwitcherProps) {
   const { lang, setLang } = useLanguage();
-  const layoutId = `lang-pill-${variant}`;
+
+  const languages = [
+    { code: "en", label: "EN" },
+    { code: "ar", label: "عربي" },
+    { code: "zh", label: "中文" },
+  ] as const;
+
+  if (variant === "mobile") {
+    return (
+      <div className="flex gap-2">
+        {languages.map((l) => (
+          <button
+            key={l.code}
+            onClick={() => setLang(l.code)}
+            className={`rounded px-3 py-1.5 text-sm transition-colors ${
+              lang === l.code
+                ? "bg-amber-500/20 text-amber-400"
+                : "text-amber-100/70 hover:text-amber-400"
+            }`}
+          >
+            {l.label}
+          </button>
+        ))}
+      </div>
+    );
+  }
 
   return (
-    <div className="relative flex items-center gap-0.5 rounded-full border border-gold/25 bg-white/[0.04] p-1 backdrop-blur-md">
-      {OPTIONS.map((o) => {
-        const active = lang === o.code;
-        return (
-          <button
-            key={o.code}
-            type="button"
-            onClick={() => setLang(o.code)}
-            className="relative rounded-full px-3 py-1.5 text-xs font-semibold transition-colors"
-            aria-pressed={active}
-          >
-            {active && (
-              <motion.span
-                layoutId={layoutId}
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-gold-light to-gold shadow-[0_6px_18px_-6px_rgba(212,175,55,0.8)]"
-                transition={{ type: "spring", stiffness: 420, damping: 34 }}
-              />
-            )}
-            <span
-              className={`relative z-10 transition-colors ${
-                active ? "text-ink" : "text-cream/60 hover:text-cream"
-              }`}
-            >
-              {o.label}
-            </span>
-          </button>
-        );
-      })}
+    <div className="flex items-center gap-1 rounded-full border border-amber-500/20 bg-amber-500/5 p-1">
+      {languages.map((l) => (
+        <button
+          key={l.code}
+          onClick={() => setLang(l.code)}
+          className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
+            lang === l.code
+              ? "bg-amber-500/20 text-amber-400"
+              : "text-amber-100/60 hover:text-amber-400"
+          }`}
+        >
+          {l.label}
+        </button>
+      ))}
     </div>
   );
 }

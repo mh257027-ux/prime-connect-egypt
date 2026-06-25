@@ -3,13 +3,6 @@ import { useLanguage } from "../context/LanguageContext";
 import Logo from "./ui/Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-const SOCIALS = [
-  { icon: Globe, href: "#" },
-  { icon: MessageCircle, href: "#" },
-  { icon: Send, href: "#" },
-  { icon: Mail, href: "mailto:mo@primeegypt" },
-];
-
 export default function Footer() {
   const { t } = useLanguage();
   const year = new Date().getFullYear();
@@ -24,35 +17,29 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden border-t border-gold/15 bg-ink-soft/60">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-      <div className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[40rem] -translate-x-1/2 rounded-full bg-gold/5 blur-[150px]" />
-
+    <footer className="relative overflow-hidden border-t border-amber-500/15 bg-amber-950/20">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
-          {/* Brand */}
           <div>
-            <Logo className="h-11 w-11" />
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/60">
+            <Logo />
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-amber-100/60">
               {t.footer.tagline}
             </p>
             <div className="mt-6 flex items-center gap-3">
-              {SOCIALS.map((s, i) => (
+              {[Globe, MessageCircle, Send, Mail].map((Icon, i) => (
                 <a
                   key={i}
-                  href={s.href}
-                  aria-label="social"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/20 bg-white/[0.03] text-cream/70 transition-all hover:border-gold/60 hover:text-gold-light"
+                  href="#"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-100/70 transition-all hover:border-amber-500/60 hover:text-amber-400"
                 >
-                  <s.icon className="h-4 w-4" strokeWidth={1.6} />
+                  <Icon className="h-4 w-4" strokeWidth={1.6} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Explore */}
           <div>
-            <h4 className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-gold/80">
+            <h4 className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-amber-400">
               {t.footer.explore}
             </h4>
             <ul className="mt-5 space-y-3">
@@ -60,7 +47,7 @@ export default function Footer() {
                 <li key={n.id}>
                   <a
                     href={`#${n.id}`}
-                    className="text-sm text-cream/60 transition-colors hover:text-gold-light"
+                    className="text-sm text-amber-100/60 transition-colors hover:text-amber-400"
                   >
                     {n.label}
                   </a>
@@ -69,9 +56,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Solutions */}
           <div>
-            <h4 className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-gold/80">
+            <h4 className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-amber-400">
               {t.footer.servicesCol}
             </h4>
             <ul className="mt-5 space-y-3">
@@ -79,7 +65,7 @@ export default function Footer() {
                 <li key={i}>
                   <a
                     href="#services"
-                    className="text-sm text-cream/60 transition-colors hover:text-gold-light"
+                    className="text-sm text-amber-100/60 transition-colors hover:text-amber-400"
                   >
                     {s.title}
                   </a>
@@ -88,32 +74,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-gold/80">
+            <h4 className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-amber-400">
               {t.footer.contactCol}
             </h4>
-            <ul className="mt-5 space-y-3 text-sm text-cream/60">
-              <li>
-                <a href="mailto:mo@primeegypt" className="transition-colors hover:text-gold-light">
-                  mo@primeegypt
-                </a>
-              </li>
-              <li>
-                <a href="mailto:hesham@primeegypt" className="transition-colors hover:text-gold-light">
-                  hesham@primeegypt
-                </a>
-              </li>
-              <li>
-                <a href="mailto:khalifa@primeegypt" className="transition-colors hover:text-gold-light">
-                  khalifa@primeegypt
-                </a>
-              </li>
-              <li>
-                <a href="tel:+201000982441" className="transition-colors hover:text-gold-light">
-                  +20 10 00982441
-                </a>
-              </li>
+            <ul className="mt-5 space-y-3 text-sm text-amber-100/60">
+              <li><a href="mailto:mo@primeegypt" className="hover:text-amber-400">mo@primeegypt</a></li>
+              <li><a href="mailto:hesham@primeegypt" className="hover:text-amber-400">hesham@primeegypt</a></li>
+              <li><a href="mailto:khalifa@primeegypt" className="hover:text-amber-400">khalifa@primeegypt</a></li>
+              <li><a href="tel:+201000982441" className="hover:text-amber-400">+20 10 00982441</a></li>
               <li className="leading-relaxed">{t.contact.values.address}</li>
             </ul>
             <div className="mt-5">
@@ -122,16 +91,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 gold-divider" />
+        <div className="mt-14 border-t border-amber-500/15" />
 
         <div className="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-xs text-cream/45">
+          <p className="text-xs text-amber-100/45">
             © {year} {t.meta.brand}. {t.footer.rights}
           </p>
-          <p className="text-xs text-cream/45">{t.footer.built}</p>
+          <p className="text-xs text-amber-100/45">{t.footer.built}</p>
           <a
             href="#home"
-            className="flex items-center gap-2 rounded-full border border-gold/20 px-4 py-2 text-xs text-cream/70 transition-colors hover:border-gold/60 hover:text-gold-light"
+            className="flex items-center gap-2 rounded-full border border-amber-500/20 px-4 py-2 text-xs text-amber-100/70 transition-colors hover:border-amber-500/60 hover:text-amber-400"
           >
             <ArrowUp className="h-3.5 w-3.5" />
             {t.nav.cta}
