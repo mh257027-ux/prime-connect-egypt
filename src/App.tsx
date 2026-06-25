@@ -25,10 +25,16 @@ function Site() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
-      <AnimatePresence>
+    <div className="relative min-h-screen overflow-x-hidden bg-black text-white">
+      {/* تم تعليق الـ Loader مؤقتاً للتجربة */}
+      {/* <AnimatePresence>
         {loading && <Loader onComplete={() => setLoading(false)} />}
-      </AnimatePresence>
+      </AnimatePresence> */}
+
+      {/* اختبار للتأكد من أن Tailwind يعمل */}
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-amber-500 text-black px-6 py-3 rounded-lg font-bold text-xl">
+        TEST - Tailwind Working!
+      </div>
 
       <CursorGlow />
       <GsapEffects />
